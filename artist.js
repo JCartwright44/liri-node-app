@@ -1,5 +1,6 @@
 const axios = require('axios');
 const moment = require('moment')
+const fs = require('fs')
 
 
 var artist
@@ -10,7 +11,7 @@ var search = process.argv.slice(3).join('+')
 
 var url = "https://rest.bandsintown.com/artists/" + search + "/events?app_id=codingbootcamp"
 
-
+var divider = "\n------------------------------------------------------------\n\n";
 
 if (type === 'concert-this') {
 

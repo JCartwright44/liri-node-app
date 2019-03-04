@@ -52,7 +52,7 @@ if (type === 'do-what-it-says'){
                 query: song
             }, function(err, data) {
                 if (err) {
-                  return console.log('Error occurred. Cannot find this song in our database.');
+                  return console.log('');
                 }
                
               console.log('Artist name: ' + data.tracks.items[0].artists[0].name);

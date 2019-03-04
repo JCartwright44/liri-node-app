@@ -1,10 +1,13 @@
 const axios = require('axios')
+const fs = require('fs')
 
 
 var movies
 
 var type = process.argv[2];
 var movie = process.argv.slice(3).join('+')
+
+var divider = "\n------------------------------------------------------------\n\n";
 
 if (type === 'movie-this') {
     url = 'http://www.omdbapi.com/?t=' + movie + '&apikey=trilogy'
