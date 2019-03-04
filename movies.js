@@ -18,6 +18,11 @@ if (type === 'movie-this') {
         console.log('Language: ' + response.data.Language)
         console.log('Plot: ' + response.data.Plot)
         console.log('Actors: ' + response.data.Actors)
+
+        fs.appendFile("log.txt", 'Name: ' + response.data.Title + ', ' + 'Release year: ' + response.data.Year + ', ' +  'Plot: ' + response.data.Plot + ', ' + 'Actors: ' + response.data.Actors + 'Rotten Tomatoes rating: ' + response.data.Ratings[1].Value + divider, function(err) {
+            if (err) throw err;
+           
+          });
     })
 }
 

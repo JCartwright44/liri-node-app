@@ -36,6 +36,11 @@ if (type === 'do-what-it-says'){
                 console.log('Venue city: ' + response.data[0].venue.city)
                 console.log('Venue state: ' + response.data[0].venue.region)
                 console.log('Date: ' + newDate)
+
+                fs.appendFile("log.txt", 'Artist(s): ' + response.data[0].lineup.slice().join(', ') + ', ' + 'Venue name: ' + response.data[0].venue.name + ', ' +  'Venue city: ' + response.data[0].venue.city + ', ' + 'Venue state: ' + response.data[0].venue.region + 'Date: ' + newDate + divider, function(err) {
+                    if (err) throw err;
+                   
+                  });
                 }
            })
         }
@@ -54,6 +59,11 @@ if (type === 'do-what-it-says'){
               console.log('Song name: ' + data.tracks.items[0].name); 
               console.log('Song URL: ' + data.tracks.items[0].external_urls.spotify); 
               console.log('Album name: ' + data.tracks.items[0].album.name);  
+
+              fs.appendFile("log.txt", 'Artist name: ' + data.tracks.items[0].artists[0].name + ', ' + 'Song name: ' + data.tracks.items[0].name + ', ' +  'Song URL: ' + data.tracks.items[0].external_urls.spotify + ', ' + 'Song URL: ' + data.tracks.items[0].external_urls.spotify + divider, function(err) {
+                if (err) throw err;
+               
+              });
               });
         }
         if (data1 === 'movie-this') {
@@ -71,6 +81,11 @@ if (type === 'do-what-it-says'){
                 console.log('Language: ' + response.data.Language)
                 console.log('Plot: ' + response.data.Plot)
                 console.log('Actors: ' + response.data.Actors)
+
+                fs.appendFile("log.txt", 'Name: ' + response.data.Title + ', ' + 'Release year: ' + response.data.Year + ', ' +  'Plot: ' + response.data.Plot + ', ' + 'Actors: ' + response.data.Actors + 'Rotten Tomatoes rating: ' + response.data.Ratings[1].Value + divider, function(err) {
+                    if (err) throw err;
+                   
+                  });
             })
         }
 

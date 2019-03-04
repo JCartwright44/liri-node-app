@@ -29,6 +29,11 @@ if (type === 'concert-this') {
         console.log('Venue city: ' + response.data[0].venue.city)
         console.log('Venue state: ' + response.data[0].venue.region)
         console.log('Date: ' + newDate)
+
+        fs.appendFile("log.txt", 'Artist(s): ' + response.data[0].lineup.slice().join(', ') + ', ' + 'Venue name: ' + response.data[0].venue.name + ', ' +  'Venue city: ' + response.data[0].venue.city + ', ' + 'Venue state: ' + response.data[0].venue.region + 'Date: ' + newDate + divider, function(err) {
+            if (err) throw err;
+           
+          });
         }
    })
 }
